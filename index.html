@@ -162,7 +162,7 @@
 
   <!-- Floating Audio Controls -->
   <div class="fixed top-5 right-5 z-50 flex items-center gap-3">
-    <button id="audio-toggle-btn" class="w-12 h-12 rounded-full card-luxury flex items-center justify-center text-royalGold-600 hover:text-royalGold-700 bg-white/90 shadow-md transition duration-300" title="Play Auspicious Temple Chimes">
+    <button id="audio-toggle-btn" class="w-12 h-12 rounded-full card-luxury flex items-center justify-center text-royalGold-600 hover:text-royalGold-700 bg-white/90 shadow-md transition duration-300" title="Play Wedding Music" aria-label="Play Wedding Music">
       <i id="audio-icon" class="fas fa-volume-mute text-base"></i>
     </button>
   </div>
@@ -498,7 +498,7 @@
     <div class="story-card mb-24 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
       <div class="relative group overflow-hidden rounded-3xl card-luxury p-3">
         <div class="w-full h-80 rounded-2xl relative overflow-hidden">
-          <img src="images/school-days.png" alt="A school class photo from the beginning of our story" class="w-full h-full object-cover object-left group-hover:scale-105 transition duration-700" />
+          <img src="images/school-days.jpeg" alt="A school class photo from the beginning of our story" class="w-full h-full object-cover object-left group-hover:scale-105 transition duration-700" />
           <span class="absolute bottom-4 right-4 font-cinzel text-xs text-royalGold-700 font-semibold tracking-widest">CHAPTER I</span>
         </div>
       </div>
@@ -854,67 +854,37 @@ Looking forward to celebrating at Peoples Trust, Sreeramanahalli!`;
     }
     animate();
 
-    let audioCtx = null;
+    const backgroundMusic = new Audio('audio/BGM.mp3');
+    backgroundMusic.loop = true;
+    backgroundMusic.preload = 'none';
     let isAudioPlaying = false;
-    let audioLoop = null;
-
-    const raagNotes = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25];
-
-    function playChime(freq, time, duration = 3.5) {
-      if (!audioCtx) return;
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-
-      osc.type = 'triangle';
-      osc.frequency.setValueAtTime(freq, time);
-
-      gain.gain.setValueAtTime(0.0001, time);
-      gain.gain.exponentialRampToValueAtTime(0.045, time + 0.3);
-      gain.gain.exponentialRampToValueAtTime(0.0001, time + duration);
-
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-
-      osc.start(time);
-      osc.stop(time + duration);
-    }
-
-    function playIndianMelody() {
-      if (!isAudioPlaying || !audioCtx) return;
-      const now = audioCtx.currentTime;
-      const note1 = raagNotes[Math.floor(Math.random() * raagNotes.length)];
-      const note2 = raagNotes[Math.floor(Math.random() * raagNotes.length)];
-      const note3 = raagNotes[Math.floor(Math.random() * raagNotes.length)];
-
-      playChime(note1, now, 4.0);
-      playChime(note2, now + 0.5, 4.0);
-      playChime(note3, now + 1.1, 4.0);
-    }
 
     const audioBtn = document.getElementById('audio-toggle-btn');
     const audioIcon = document.getElementById('audio-icon');
 
-    audioBtn.addEventListener('click', () => {
-      if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      }
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
-      }
-
-      isAudioPlaying = !isAudioPlaying;
-
+    audioBtn.addEventListener('click', async () => {
       if (isAudioPlaying) {
-        audioIcon.classList.remove('fa-volume-mute');
-        audioIcon.classList.add('fa-bell');
-        showToast("Playing auspicious celebration chimes");
-        playIndianMelody();
-        audioLoop = setInterval(playIndianMelody, 3600);
-      } else {
-        audioIcon.classList.remove('fa-bell');
+        backgroundMusic.pause();
+        isAudioPlaying = false;
+        audioIcon.classList.remove('fa-volume-up');
         audioIcon.classList.add('fa-volume-mute');
-        showToast("Audio muted");
-        clearInterval(audioLoop);
+        audioBtn.title = 'Play Wedding Music';
+        audioBtn.setAttribute('aria-label', 'Play Wedding Music');
+        showToast("Music paused");
+        return;
+      }
+
+      try {
+        await backgroundMusic.play();
+        isAudioPlaying = true;
+        audioIcon.classList.remove('fa-volume-mute');
+        audioIcon.classList.add('fa-volume-up');
+        audioBtn.title = 'Pause Wedding Music';
+        audioBtn.setAttribute('aria-label', 'Pause Wedding Music');
+        showToast("Playing wedding music");
+      } catch (error) {
+        console.error("Unable to play wedding music", error);
+        showToast("Could not play music. Please try again.");
       }
     });
   </script>
