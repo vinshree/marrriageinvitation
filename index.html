@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Royal Wedding Celebration — Vinay LJ & Shrigandha Irani S</title>
+  <title data-kn="ವಿನಯ್ ಮತ್ತು ಶ್ರೀಗಂಧ ಅವರ ವಿವಾಹ ಸಂಭ್ರಮ">The Royal Wedding Celebration — Vinay LJ & Shrigandha Irani S</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Great+Vibes&family=Noto+Serif+Kannada:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -153,12 +153,32 @@
       border-color: #B8860B;
       box-shadow: 0 0 10px rgba(184, 134, 11, 0.25);
     }
+
+    html[lang="kn"] body,
+    html[lang="kn"] .font-cinzel,
+    html[lang="kn"] .font-cormorant,
+    html[lang="kn"] .font-vibes,
+    html[lang="kn"] .font-playfair {
+      font-family: 'Noto Serif Kannada', serif;
+    }
+
+    html[lang="kn"] [class*="tracking-"] {
+      letter-spacing: normal;
+    }
+
+    #language-toggle {
+      font-family: 'Noto Serif Kannada', serif;
+    }
   </style>
 </head>
 <body class="selection:bg-royalGold-400 selection:text-white">
 
   <!-- Interactive Floating Background Rose Petals & Gold Sparkles -->
   <canvas id="ambient-canvas"></canvas>
+
+  <div class="fixed top-5 left-5 z-50">
+    <button id="language-toggle" type="button" class="card-luxury rounded-full px-5 py-3 text-royalGold-700 font-semibold text-sm shadow-md transition hover:text-royalGold-800" aria-label="Switch to Kannada" lang="kn">ಕನ್ನಡ</button>
+  </div>
 
   <!-- Floating Audio Controls -->
   <div class="fixed top-5 right-5 z-50 flex items-center gap-3">
@@ -170,7 +190,7 @@
   <!-- Toast Notification Container -->
   <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transform translate-y-24 opacity-0 transition-all duration-500 bg-white/95 px-6 py-3 rounded-full border border-royalGold-500 text-royalGold-700 text-sm font-cinzel shadow-xl flex items-center gap-3 backdrop-blur-md">
     <i class="fas fa-check-circle text-royalGold-500"></i>
-    <span id="toast-message">Notice</span>
+    <span id="toast-message" data-kn="ಸೂಚನೆ">Notice</span>
   </div>
 
   <!-- 1. HERO INVITATION CARD -->
@@ -236,23 +256,23 @@
         </svg>
       </div>
 
-      <p class="font-cinzel text-xs sm:text-sm tracking-[0.28em] uppercase text-charcoal/80 mb-2">Together With Their Families</p>
-      <p class="font-cormorant text-xs sm:text-sm tracking-[0.2em] uppercase text-royalGold-700 font-semibold mb-6">You Are Cordially Invited To The Wedding Of</p>
+      <p data-kn="ಕುಟುಂಬದವರೊಂದಿಗೆ" class="font-cinzel text-xs sm:text-sm tracking-[0.28em] uppercase text-charcoal/80 mb-2">Together With Their Families</p>
+      <p data-kn="ನಮ್ಮ ವಿವಾಹ ಸಮಾರಂಭಕ್ಕೆ ಆತ್ಮೀಯ ಆಮಂತ್ರಣ" class="font-cormorant text-xs sm:text-sm tracking-[0.2em] uppercase text-royalGold-700 font-semibold mb-6">You Are Cordially Invited To The Wedding Of</p>
 
       <!-- Couple Names -->
       <div class="my-4 px-2 sm:px-4 max-w-full overflow-hidden">
-        <h1 class="font-vibes text-[clamp(2.5rem,7vw,4.5rem)] gold-foil-text leading-tight tracking-normal pb-1">Vinay LJ</h1>
+        <h1 data-kn="ವಿನಯ್ ಎಲ್.ಜೆ." class="font-vibes text-[clamp(2.5rem,7vw,4.5rem)] gold-foil-text leading-tight tracking-normal pb-1">Vinay LJ</h1>
         <div class="flex items-center justify-center gap-4 my-2">
           <span class="w-10 sm:w-16 h-px bg-gradient-to-r from-transparent via-royalGold-400 to-transparent"></span>
-          <span class="font-cinzel text-xs sm:text-sm uppercase tracking-[0.35em] text-royalGold-700 font-semibold">And</span>
+          <span data-kn="ಮತ್ತು" class="font-cinzel text-xs sm:text-sm uppercase tracking-[0.35em] text-royalGold-700 font-semibold">And</span>
           <span class="w-10 sm:w-16 h-px bg-gradient-to-r from-transparent via-royalGold-400 to-transparent"></span>
         </div>
-        <h1 class="font-vibes text-[clamp(2.3rem,6.8vw,4.35rem)] gold-foil-text leading-tight tracking-normal pt-1 break-words">Shrigandha Irani S</h1>
+        <h1 data-kn="ಶ್ರೀಗಂಧ ಇರಾನಿ ಎಸ್." class="font-vibes text-[clamp(2.3rem,6.8vw,4.35rem)] gold-foil-text leading-tight tracking-normal pt-1 break-words">Shrigandha Irani S</h1>
       </div>
 
       <div class="my-6">
-        <p class="font-cinzel text-xs sm:text-[13px] tracking-[0.25em] uppercase text-charcoal/90">From our first chapter</p>
-        <p class="font-cinzel text-[11px] sm:text-xs tracking-[0.25em] uppercase text-royalGold-700 font-semibold mt-1">To our forever</p>
+        <p data-kn="ನಮ್ಮ ಮೊದಲ ಅಧ್ಯಾಯದಿಂದ" class="font-cinzel text-xs sm:text-[13px] tracking-[0.25em] uppercase text-charcoal/90">From our first chapter</p>
+        <p data-kn="ಜೀವನಪರ್ಯಂತದ ಜೊತೆಯ ಕಡೆಗೆ" class="font-cinzel text-[11px] sm:text-xs tracking-[0.25em] uppercase text-royalGold-700 font-semibold mt-1">To our forever</p>
       </div>
 
       <div class="flex items-center justify-center gap-3 my-5 text-royalGold-500">
@@ -264,33 +284,33 @@
       <!-- Date Badge -->
       <div class="inline-flex items-center justify-center gap-6 py-2 px-6 font-cinzel text-charcoal">
         <div class="text-right">
-          <span class="text-xs sm:text-sm tracking-[0.2em] uppercase block font-semibold text-royalGold-700">Thursday</span>
-          <span class="text-[11px] tracking-wider text-charcoal/60 uppercase">Morning</span>
+          <span data-kn="ಗುರುವಾರ" class="text-xs sm:text-sm tracking-[0.2em] uppercase block font-semibold text-royalGold-700">Thursday</span>
+          <span data-kn="ಬೆಳಗ್ಗೆ" class="text-[11px] tracking-wider text-charcoal/60 uppercase">Morning</span>
         </div>
         <div class="border-x border-royalGold-500/50 px-5 text-center">
-          <span class="text-xs uppercase tracking-widest text-royalGold-600 block">Nov</span>
+          <span data-kn="ನವೆಂಬರ್" class="text-xs uppercase tracking-widest text-royalGold-600 block">Nov</span>
           <span class="text-3xl sm:text-4xl font-bold font-playfair text-royalGold-700 leading-none">26</span>
           <span class="text-xs tracking-wider text-royalGold-600 block mt-0.5">2026</span>
         </div>
         <div class="text-left">
-          <span class="text-xs sm:text-sm tracking-[0.2em] uppercase block font-semibold text-royalGold-700">08:15 AM</span>
-          <span class="text-[11px] tracking-wider text-charcoal/60 uppercase">Onwards</span>
+          <span data-kn="ಬೆಳಿಗ್ಗೆ 08:15" class="text-xs sm:text-sm tracking-[0.2em] uppercase block font-semibold text-royalGold-700">08:15 AM</span>
+          <span data-kn="ರಿಂದ" class="text-[11px] tracking-wider text-charcoal/60 uppercase">Onwards</span>
         </div>
       </div>
 
       <div class="mt-8 space-y-1">
-        <p class="font-cinzel text-xs uppercase tracking-[0.22em] text-royalGold-700 font-semibold">Peoples Trust, Sreeramanahalli, Karnataka</p>
-        <p class="font-cormorant text-base sm:text-lg text-charcoal/80">Scroll down for ceremony timeline & live map </p>
+        <p data-kn="ಪೀಪಲ್ಸ್ ಟ್ರಸ್ಟ್, ಶ್ರೀರಾಮನಹಳ್ಳಿ, ಕರ್ನಾಟಕ" class="font-cinzel text-xs uppercase tracking-[0.22em] text-royalGold-700 font-semibold">Peoples Trust, Sreeramanahalli, Karnataka</p>
+        <p data-kn="ಸಮಾರಂಭದ ವೇಳಾಪಟ್ಟಿ ಮತ್ತು ನಕ್ಷೆಗಾಗಿ ಕೆಳಗೆ ಸ್ಕ್ರೋಲ್ ಮಾಡಿ" class="font-cormorant text-base sm:text-lg text-charcoal/80">Scroll down for ceremony timeline & live map </p>
       </div>
 
       <div class="mt-8 pt-4">
-        <p class="font-vibes text-2xl sm:text-3xl text-royalGold-700">We look forward to celebrating with you!</p>
+        <p data-kn="ನಿಮ್ಮೊಂದಿಗೆ ಸಂಭ್ರಮಿಸಲು ಕಾತರರಾಗಿದ್ದೇವೆ!" class="font-vibes text-2xl sm:text-3xl text-royalGold-700">We look forward to celebrating with you!</p>
       </div>
     </div>
 
     <!-- Scroll Cue -->
     <div class="absolute bottom-6 flex flex-col items-center gap-1.5 cursor-pointer z-20" onclick="scrollToSection('ceremonies')">
-      <span class="font-cinzel text-[10px] uppercase tracking-[0.25em] text-royalGold-700/80 font-semibold">Explore Celebrations</span>
+      <span data-kn="ಸಂಭ್ರಮಗಳನ್ನು ನೋಡಿ" class="font-cinzel text-[10px] uppercase tracking-[0.25em] text-royalGold-700/80 font-semibold">Explore Celebrations</span>
       <i class="fas fa-chevron-down text-royalGold-600 text-xs animate-bounce"></i>
     </div>
   </header>
@@ -298,26 +318,26 @@
   <!-- 2. COUNTDOWN -->
   <section class="py-14 px-4 bg-gradient-to-b from-ivory-50 via-blush-100/40 to-ivory-100">
     <div class="max-w-4xl mx-auto text-center card-luxury p-8 sm:p-12 rounded-3xl border-royalGold-400/40">
-      <span class="font-cinzel text-xs uppercase tracking-[0.3em] text-royalGold-600 font-semibold">Auspicious Countdown</span>
-      <h2 class="font-playfair text-3xl sm:text-4xl text-charcoal my-2">Counting Every Sacred Moment</h2>
-      <p class="font-cormorant italic text-charcoal/70 text-lg">Until our celebrations begin with the Grand Reception</p>
+      <span data-kn="ಶುಭ ಮುಹೂರ್ತದ ಕ್ಷಣಗಣನೆ" class="font-cinzel text-xs uppercase tracking-[0.3em] text-royalGold-600 font-semibold">Auspicious Countdown</span>
+      <h2 data-kn="ಶುಭ ಕ್ಷಣಗಳ ನಿರೀಕ್ಷೆಯಲ್ಲಿ" class="font-playfair text-3xl sm:text-4xl text-charcoal my-2">Counting Every Sacred Moment</h2>
+      <p data-kn="ನಮ್ಮ ಸಂಭ್ರಮಗಳು ಭವ್ಯ ಆರತಕ್ಷತೆಯೊಂದಿಗೆ ಆರಂಭವಾಗುವವರೆಗೆ" class="font-cormorant italic text-charcoal/70 text-lg">Until our celebrations begin with the Grand Reception</p>
 
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 font-cinzel">
         <div class="p-4 rounded-2xl bg-white border border-royalGold-300 shadow-sm">
           <div id="cd-days" class="text-3xl sm:text-4xl text-royalGold-700 font-bold font-playfair">00</div>
-          <div class="text-[10px] uppercase tracking-widest text-charcoal/70 mt-1">Days</div>
+          <div data-kn="ದಿನಗಳು" class="text-[10px] uppercase tracking-widest text-charcoal/70 mt-1">Days</div>
         </div>
         <div class="p-4 rounded-2xl bg-white border border-royalGold-300 shadow-sm">
           <div id="cd-hours" class="text-3xl sm:text-4xl text-royalGold-700 font-bold font-playfair">00</div>
-          <div class="text-[10px] uppercase tracking-widest text-charcoal/70 mt-1">Hours</div>
+          <div data-kn="ಗಂಟೆಗಳು" class="text-[10px] uppercase tracking-widest text-charcoal/70 mt-1">Hours</div>
         </div>
         <div class="p-4 rounded-2xl bg-white border border-royalGold-300 shadow-sm">
           <div id="cd-mins" class="text-3xl sm:text-4xl text-royalGold-700 font-bold font-playfair">00</div>
-          <div class="text-[10px] uppercase tracking-widest text-charcoal/70 mt-1">Minutes</div>
+          <div data-kn="ನಿಮಿಷಗಳು" class="text-[10px] uppercase tracking-widest text-charcoal/70 mt-1">Minutes</div>
         </div>
         <div class="p-4 rounded-2xl bg-white border border-royalGold-300 shadow-sm">
           <div id="cd-secs" class="text-3xl sm:text-4xl text-royalGold-700 font-bold font-playfair">00</div>
-          <div class="text-[10px] uppercase tracking-widest text-charcoal/70 mt-1">Seconds</div>
+          <div data-kn="ಸೆಕೆಂಡುಗಳು" class="text-[10px] uppercase tracking-widest text-charcoal/70 mt-1">Seconds</div>
         </div>
       </div>
     </div>
@@ -333,8 +353,8 @@
           <path d="M6 10 C9 12, 15 12, 18 10" />
         </svg>
       </div>
-      <span class="font-cinzel text-xs uppercase tracking-[0.35em] text-royalGold-700 font-bold">Sacred Gatherings</span>
-      <h2 class="font-playfair text-3xl sm:text-5xl text-charcoal mt-2">Wedding Ceremonies</h2>
+      <span data-kn="ಶುಭ ಸಮಾರಂಭಗಳು" class="font-cinzel text-xs uppercase tracking-[0.35em] text-royalGold-700 font-bold">Sacred Gatherings</span>
+      <h2 data-kn="ವಿವಾಹ ಸಮಾರಂಭಗಳು" class="font-playfair text-3xl sm:text-5xl text-charcoal mt-2">Wedding Ceremonies</h2>
       <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-royalGold-500 to-transparent mx-auto mt-4"></div>
     </div>
 
@@ -344,10 +364,10 @@
         <div class="absolute top-0 right-0 w-32 h-32 bg-blush-200/40 rounded-bl-full pointer-events-none"></div>
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-royalGold-100 text-royalGold-700 text-[11px] font-cinzel font-semibold tracking-wider uppercase mb-5">
-            <i class="fas fa-moon text-royalGold-500"></i> Evening Celebration
+            <i class="fas fa-moon text-royalGold-500"></i> <span data-kn="ಸಂಜೆಯ ಸಂಭ್ರಮ">Evening Celebration</span>
           </div>
-          <h3 class="font-playfair text-3xl text-charcoal font-normal mb-1">The Wedding Reception</h3>
-          <p class="font-vibes text-2xl text-royalGold-600 mb-4">An evening of warmth, music & blessings</p>
+          <h3 data-kn="ವಿವಾಹ ಆರತಕ್ಷತೆ" class="font-playfair text-3xl text-charcoal font-normal mb-1">The Wedding Reception</h3>
+          <p data-kn="ಪ್ರೀತಿ, ಸಂಗೀತ ಮತ್ತು ಆಶೀರ್ವಾದಗಳಿಂದ ತುಂಬಿದ ಸಂಜೆ" class="font-vibes text-2xl text-royalGold-600 mb-4">An evening of warmth, music & blessings</p>
 
           <div class="space-y-3.5 my-6 border-y border-royalGold-200/70 py-6">
             <div class="flex items-center gap-4 text-charcoal">
@@ -355,8 +375,8 @@
                 <i class="far fa-calendar-alt text-base"></i>
               </div>
               <div>
-                <p class="font-cinzel text-xs uppercase tracking-wider text-royalGold-700 font-semibold">Date</p>
-                <p class="font-playfair text-lg font-semibold text-charcoal">Wednesday, 25th November 2026</p>
+                <p data-kn="ದಿನಾಂಕ" class="font-cinzel text-xs uppercase tracking-wider text-royalGold-700 font-semibold">Date</p>
+                <p data-kn="ಬುಧವಾರ, 25 ನವೆಂಬರ್ 2026" class="font-playfair text-lg font-semibold text-charcoal">Wednesday, 25th November 2026</p>
               </div>
             </div>
             <div class="flex items-center gap-4 text-charcoal">
@@ -364,8 +384,8 @@
                 <i class="far fa-clock text-base"></i>
               </div>
               <div>
-                <p class="font-cinzel text-xs uppercase tracking-wider text-royalGold-700 font-semibold">Auspicious Time</p>
-                <p class="font-playfair text-lg font-semibold text-charcoal">06:30 PM Onwards</p>
+                <p data-kn="ಶುಭ ಸಮಯ" class="font-cinzel text-xs uppercase tracking-wider text-royalGold-700 font-semibold">Auspicious Time</p>
+                <p data-kn="ಸಂಜೆ 06:30ರಿಂದ" class="font-playfair text-lg font-semibold text-charcoal">06:30 PM Onwards</p>
               </div>
             </div>
             <div class="flex items-center gap-4 text-charcoal">
@@ -373,8 +393,8 @@
                 <i class="fas fa-utensils text-base"></i>
               </div>
               <div>
-                <p class="font-cinzel text-xs uppercase tracking-wider text-royalGold-700 font-semibold">Highlights</p>
-                <p class="font-cormorant text-base text-charcoal/80">Dinner, Live Music, Greetings & Photo Celebrations</p>
+                <p data-kn="ವಿಶೇಷ ಆಕರ್ಷಣೆಗಳು" class="font-cinzel text-xs uppercase tracking-wider text-royalGold-700 font-semibold">Highlights</p>
+                <p data-kn="ಭೋಜನ, ಲೈವ್ ಸಂಗೀತ, ಶುಭಾಶಯಗಳು ಮತ್ತು ಫೋಟೋ ಸಂಭ್ರಮ" class="font-cormorant text-base text-charcoal/80">Dinner, Live Music, Greetings & Photo Celebrations</p>
               </div>
             </div>
           </div>
@@ -382,10 +402,10 @@
 
         <div class="pt-4 flex flex-col sm:flex-row items-center gap-3">
           <a id="cal-reception" href="#" target="_blank" class="w-full sm:w-auto flex-1 text-center py-2.5 px-4 rounded-full bg-royalGold-500 text-white font-cinzel text-xs tracking-wider uppercase hover:bg-royalGold-600 transition shadow-sm">
-            <i class="far fa-calendar-plus mr-1.5"></i> Add Reception to Cal
+            <i class="far fa-calendar-plus mr-1.5"></i> <span data-kn="ಕ್ಯಾಲೆಂಡರ್‌ಗೆ ಆರತಕ್ಷತೆ ಸೇರಿಸಿ">Add Reception to Cal</span>
           </a>
           <button onclick="scrollToSection('location-section')" class="w-full sm:w-auto py-2.5 px-4 rounded-full border border-royalGold-500 text-royalGold-700 font-cinzel text-xs tracking-wider uppercase hover:bg-royalGold-50 transition">
-            <i class="fas fa-map-marker-alt mr-1"></i> Venue
+            <i class="fas fa-map-marker-alt mr-1"></i> <span data-kn="ಸ್ಥಳ">Venue</span>
           </button>
         </div>
       </div>
@@ -395,10 +415,10 @@
         <div class="absolute top-0 right-0 w-32 h-32 bg-royalGold-200/40 rounded-bl-full pointer-events-none"></div>
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-vermilion text-white text-[11px] font-cinzel font-semibold tracking-wider uppercase mb-5">
-            <i class="fas fa-sun text-yellow-300"></i> Sacred Muhurtham
+            <i class="fas fa-sun text-yellow-300"></i> <span data-kn="ಶುಭ ಮುಹೂರ್ತ">Sacred Muhurtham</span>
           </div>
-          <h3 class="font-playfair text-3xl text-charcoal font-normal mb-1">The Muhurtham</h3>
-          <p class="font-vibes text-2xl text-royalGold-700 mb-4">Vedic vows, mangalsutra & saptapadi pheras</p>
+          <h3 data-kn="ಮುಹೂರ್ತ" class="font-playfair text-3xl text-charcoal font-normal mb-1">The Muhurtham</h3>
+          <p data-kn="ವೇದ ಮಂತ್ರಗಳ ವಚನ, ಮಾಂಗಲ್ಯಧಾರಣೆ ಮತ್ತು ಸಪ್ತಪದಿ" class="font-vibes text-2xl text-royalGold-700 mb-4">Vedic vows, mangalsutra & saptapadi pheras</p>
 
           <div class="space-y-3.5 my-6 border-y border-royalGold-300 py-6">
             <div class="flex items-center gap-4 text-charcoal">
@@ -406,8 +426,8 @@
                 <i class="far fa-calendar-check text-base"></i>
               </div>
               <div>
-                <p class="font-cinzel text-xs uppercase tracking-wider text-royalGold-700 font-semibold">Date</p>
-                <p class="font-playfair text-lg font-semibold text-charcoal">Thursday, 26th November 2026</p>
+                <p data-kn="ದಿನಾಂಕ" class="font-cinzel text-xs uppercase tracking-wider text-royalGold-700 font-semibold">Date</p>
+                <p data-kn="ಗುರುವಾರ, 26 ನವೆಂಬರ್ 2026" class="font-playfair text-lg font-semibold text-charcoal">Thursday, 26th November 2026</p>
               </div>
             </div>
             <div class="flex items-center gap-4 text-charcoal">
@@ -415,8 +435,8 @@
                 <i class="far fa-clock text-base"></i>
               </div>
               <div>
-                <p class="font-cinzel text-xs uppercase tracking-wider text-royalGold-700 font-semibold">Auspicious Time</p>
-                <p class="font-playfair text-lg font-semibold text-charcoal">08:15 AM Onwards</p>
+                <p data-kn="ಶುಭ ಸಮಯ" class="font-cinzel text-xs uppercase tracking-wider text-royalGold-700 font-semibold">Auspicious Time</p>
+                <p data-kn="ಬೆಳಗ್ಗೆ 08:15ರಿಂದ" class="font-playfair text-lg font-semibold text-charcoal">08:15 AM Onwards</p>
               </div>
             </div>
             <div class="flex items-center gap-4 text-charcoal">
@@ -424,8 +444,8 @@
                 <i class="fas fa-fire text-base text-vermilion"></i>
               </div>
               <div>
-                <p class="font-cinzel text-xs uppercase tracking-wider text-royalGold-700 font-semibold">Rituals</p>
-                <p class="font-cormorant text-base text-charcoal/80">Kanyadaan, Mangalsutra Dharana, Saat Phere & Traditional Feast</p>
+                <p data-kn="ವಿಧಿವಿಧಾನಗಳು" class="font-cinzel text-xs uppercase tracking-wider text-royalGold-700 font-semibold">Rituals</p>
+                <p data-kn="ಕನ್ಯಾದಾನ, ಮಾಂಗಲ್ಯಧಾರಣೆ, ಸಪ್ತಪದಿ ಮತ್ತು ಸಾಂಪ್ರದಾಯಿಕ ಭೋಜನ" class="font-cormorant text-base text-charcoal/80">Kanyadaan, Mangalsutra Dharana, Saat Phere & Traditional Feast</p>
               </div>
             </div>
           </div>
@@ -433,10 +453,10 @@
 
         <div class="pt-4 flex flex-col sm:flex-row items-center gap-3">
           <a id="cal-muhurtham" href="#" target="_blank" class="w-full sm:w-auto flex-1 text-center py-2.5 px-4 rounded-full bg-vermilion text-white font-cinzel text-xs tracking-wider uppercase hover:bg-vermilion/90 transition shadow-md">
-            <i class="far fa-calendar-plus mr-1.5"></i> Add Muhurtham to Cal
+            <i class="far fa-calendar-plus mr-1.5"></i> <span data-kn="ಕ್ಯಾಲೆಂಡರ್‌ಗೆ ಮುಹೂರ್ತ ಸೇರಿಸಿ">Add Muhurtham to Cal</span>
           </a>
           <button onclick="scrollToSection('location-section')" class="w-full sm:w-auto py-2.5 px-4 rounded-full border border-royalGold-500 text-royalGold-700 font-cinzel text-xs tracking-wider uppercase hover:bg-royalGold-50 transition">
-            <i class="fas fa-map-marker-alt mr-1"></i> Venue
+            <i class="fas fa-map-marker-alt mr-1"></i> <span data-kn="ಸ್ಥಳ">Venue</span>
           </button>
         </div>
       </div>
@@ -447,27 +467,27 @@
   <section id="location-section" class="py-20 px-4 bg-gradient-to-b from-transparent via-blush-100/30 to-transparent">
     <div class="max-w-5xl mx-auto card-luxury rounded-3xl p-6 sm:p-12 border-royalGold-400">
       <div class="text-center mb-8">
-        <span class="font-cinzel text-xs uppercase tracking-[0.35em] text-royalGold-600 font-semibold">Destination & Directions</span>
-        <h2 class="font-playfair text-3xl sm:text-4xl text-charcoal mt-1">Wedding Venue</h2>
+        <span data-kn="ಸ್ಥಳ ಮತ್ತು ಮಾರ್ಗದ ವಿವರಗಳು" class="font-cinzel text-xs uppercase tracking-[0.35em] text-royalGold-600 font-semibold">Destination & Directions</span>
+        <h2 data-kn="ವಿವಾಹ ಸ್ಥಳ" class="font-playfair text-3xl sm:text-4xl text-charcoal mt-1">Wedding Venue</h2>
         <div class="w-20 h-0.5 bg-gradient-to-r from-transparent via-royalGold-500 to-transparent mx-auto mt-3"></div>
       </div>
 
       <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-8 bg-ivory-50/90 p-6 rounded-2xl border border-royalGold-300">
         <div class="text-left space-y-1.5">
           <span class="text-xs font-cinzel uppercase tracking-widest text-royalGold-700 font-bold flex items-center gap-2">
-            <i class="fas fa-map-marked-alt text-vermilion"></i> Sacred Destination
+            <i class="fas fa-map-marked-alt text-vermilion"></i> <span data-kn="ಶುಭ ಸ್ಥಳ">Sacred Destination</span>
           </span>
-          <h3 class="font-playfair text-2xl sm:text-3xl text-charcoal font-semibold">Peoples Trust</h3>
-          <p class="text-charcoal/80 font-cormorant text-lg">Sreeramanahalli, Karnataka 562163</p>
-          <p class="text-xs font-cinzel text-royalGold-800">Convenient parking, welcoming entrance & festive pavilion</p>
+          <h3 data-kn="ಪೀಪಲ್ಸ್ ಟ್ರಸ್ಟ್" class="font-playfair text-2xl sm:text-3xl text-charcoal font-semibold">Peoples Trust</h3>
+          <p data-kn="ಶ್ರೀರಾಮನಹಳ್ಳಿ, ಕರ್ನಾಟಕ 562163" class="text-charcoal/80 font-cormorant text-lg">Sreeramanahalli, Karnataka 562163</p>
+          <p data-kn="ಸುಗಮ ಪಾರ್ಕಿಂಗ್, ಸ್ವಾಗತಾರ್ಹ ಪ್ರವೇಶದ್ವಾರ ಮತ್ತು ಹಬ್ಬದ ಮಂಟಪ" class="text-xs font-cinzel text-royalGold-800">Convenient parking, welcoming entrance & festive pavilion</p>
         </div>
 
         <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
           <a href="https://maps.app.goo.gl/EgXtZN5DfuWKcGC8A" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full bg-royalGold-500 hover:bg-royalGold-600 text-white font-cinzel text-xs tracking-wider uppercase text-center transition duration-300 shadow-md flex items-center justify-center gap-2">
-            <i class="fas fa-location-arrow"></i> Open in Google Maps
+            <i class="fas fa-location-arrow"></i> <span data-kn="ಗೂಗಲ್ ನಕ್ಷೆಯಲ್ಲಿ ತೆರೆಯಿರಿ">Open in Google Maps</span>
           </a>
           <button onclick="copyVenueLink()" class="px-6 py-3 rounded-full border border-royalGold-500 text-royalGold-700 hover:bg-royalGold-50 font-cinzel text-xs tracking-wider uppercase text-center transition duration-300 flex items-center justify-center gap-2">
-            <i class="far fa-copy"></i> Copy Directions Link
+            <i class="far fa-copy"></i> <span data-kn="ಮಾರ್ಗದ ಲಿಂಕ್ ನಕಲಿಸಿ">Copy Directions Link</span>
           </button>
         </div>
       </div>
@@ -480,7 +500,7 @@
           style="border:0; display:block;" 
           allowfullscreen="" 
           loading="lazy" 
-          referrerpolicy="strict-origin-when-cross-origin">
+          referrerpolicy="strict-origin-when-cross-origin" title="Map showing Peoples Trust, Sreeramanahalli" data-kn-title="ಶ್ರೀರಾಮನಹಳ್ಳಿಯ ಪೀಪಲ್ಸ್ ಟ್ರಸ್ಟ್ ತೋರಿಸುವ ನಕ್ಷೆ">
         </iframe>
       </div>
     </div>
@@ -489,8 +509,8 @@
   <!-- 5. OUR STORY -->
   <section id="story-section" class="py-24 px-4 max-w-5xl mx-auto">
     <div class="text-center mb-20">
-      <span class="font-cinzel text-xs uppercase tracking-[0.4em] text-royalGold-600 font-semibold">The Journey of Two Hearts</span>
-      <h2 class="font-playfair text-3xl sm:text-5xl text-charcoal mt-2 font-normal">Our Story in Chapters</h2>
+      <span data-kn="ಎರಡು ಹೃದಯಗಳ ಪಯಣ" class="font-cinzel text-xs uppercase tracking-[0.4em] text-royalGold-600 font-semibold">The Journey of Two Hearts</span>
+      <h2 data-kn="ಅಧ್ಯಾಯಗಳಲ್ಲಿ ನಮ್ಮ ಪ್ರೇಮಕಥೆ" class="font-playfair text-3xl sm:text-5xl text-charcoal mt-2 font-normal">Our Story in Chapters</h2>
       <div class="w-20 h-0.5 bg-gradient-to-r from-transparent via-royalGold-500 to-transparent mx-auto mt-4"></div>
     </div>
 
@@ -498,14 +518,14 @@
     <div class="story-card mb-24 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
       <div class="relative group overflow-hidden rounded-3xl card-luxury p-3">
         <div class="w-full h-80 rounded-2xl relative overflow-hidden">
-          <img src="images/school-days.png" alt="A school class photo from the beginning of our story" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700" />
-          <span class="absolute bottom-4 right-4 font-cinzel text-xs text-royalGold-700 font-semibold tracking-widest">CHAPTER I</span>
+          <img src="images/school-days.png" alt="A school class photo from the beginning of our story" data-kn-alt="ನಮ್ಮ ಕಥೆಯ ಆರಂಭದ ಶಾಲಾ ತರಗತಿಯ ಚಿತ್ರ" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700" />
+          <span data-kn="ಅಧ್ಯಾಯ I" class="absolute bottom-4 right-4 font-cinzel text-xs text-royalGold-700 font-semibold tracking-widest">CHAPTER I</span>
         </div>
       </div>
       <div class="space-y-4 md:pl-6 text-left">
-        <span class="font-vibes text-3xl text-royalGold-600">The Serendipity</span>
-        <h3 class="font-playfair text-2xl sm:text-3xl text-charcoal">Where It All Began</h3>
-        <p class="font-cormorant text-charcoal/80 text-lg leading-relaxed">
+        <span data-kn="ಅನಿರೀಕ್ಷಿತ ಸುಂದರ ಆರಂಭ" class="font-vibes text-3xl text-royalGold-600">The Serendipity</span>
+        <h3 data-kn="ಎಲ್ಲವೂ ಆರಂಭವಾದದ್ದು ಇಲ್ಲಿ" class="font-playfair text-2xl sm:text-3xl text-charcoal">Where It All Began</h3>
+        <p data-kn="ಏಳನೇ ತರಗತಿಯಲ್ಲಿ, ಮನದೊಳಗಿನ ಮೌನ ಪ್ರೀತಿ ಮತ್ತು ಅರಳಲು ಕಾಯುತ್ತಿದ್ದ ಕಥೆಯೊಂದಿಗೆ ನಮ್ಮ ಪಯಣ ಆರಂಭವಾಯಿತು. 2014ರಲ್ಲಿ ಒಂಬತ್ತನೇ ತರಗತಿಗೆ ಬಂದಾಗ, ಶಾಲಾ ದಿನಗಳ ಆ ಪುಟ್ಟ ಭಾವನೆಗಳು ಸುಂದರ ಪ್ರೀತಿಯಾಗಿ ಅರಳಿದವು. ಮುಗ್ಧ ಪ್ರೀತಿಯಾಗಿ ಆರಂಭವಾದದ್ದು ಕಾಲದ ಪರೀಕ್ಷೆಯನ್ನು ಎದುರಿಸಿದ ಬಾಂಧವ್ಯವಾಗಿ ಬೆಳೆಯಿತು. ಕೆಲವೊಮ್ಮೆ, ಎಂದೆಂದಿಗೂ ಜೊತೆಯಾಗುವ ದಾರಿಗೆ ನಮ್ಮನ್ನು ಕರೆದೊಯ್ಯುವ ಅತ್ಯಂತ ಮಧುರ ಪ್ರೇಮಕಥೆಗಳು ಬಹಳ ಹಿಂದೆಯೇ ಆರಂಭವಾಗಿರುತ್ತವೆ." class="font-cormorant text-charcoal/80 text-lg leading-relaxed">
           It began in Class 7, with a quiet crush and a story waiting to unfold. By Class 9, in 2014, those little school-day feelings blossomed into something beautiful. What started as innocent young love grew into a bond that stood the test of time, proving that sometimes, the sweetest love stories begin long before we realise they're leading us to forever.
         </p>
       </div>
@@ -515,14 +535,14 @@
     <div class="story-card mb-24 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
       <div class="relative group overflow-hidden rounded-3xl card-luxury p-3 md:order-2">
         <div class="w-full h-80 rounded-2xl relative overflow-hidden">
-          <img src="images/chapter-two.jpg" alt="The couple celebrating together" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700" />
-          <span class="absolute bottom-4 right-4 font-cinzel text-xs text-royalGold-700 font-semibold tracking-widest">CHAPTER II</span>
+          <img src="images/chapter-two.jpg" alt="The couple celebrating together" data-kn-alt="ಒಟ್ಟಿಗೆ ಸಂಭ್ರಮಿಸುತ್ತಿರುವ ಜೋಡಿ" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700" />
+          <span data-kn="ಅಧ್ಯಾಯ II" class="absolute bottom-4 right-4 font-cinzel text-xs text-royalGold-700 font-semibold tracking-widest">CHAPTER II</span>
         </div>
       </div>
       <div class="space-y-4 md:pr-6 text-left md:order-1">
-        <span class="font-vibes text-3xl text-royalGold-600">The Growth</span>
-        <h3 class="font-playfair text-2xl sm:text-3xl text-charcoal">Growing Through Every Season</h3>
-        <p class="font-cormorant text-charcoal/80 text-lg leading-relaxed">
+        <span data-kn="ಬೆಳವಣಿಗೆ" class="font-vibes text-3xl text-royalGold-600">The Growth</span>
+        <h3 data-kn="ಜೀವನದ ಎಲ್ಲ ಋತುಗಳಲ್ಲೂ ಜೊತೆಯಾಗಿ" class="font-playfair text-2xl sm:text-3xl text-charcoal">Growing Through Every Season</h3>
+        <p data-kn="ಶಾಲಾ ದಿನಗಳ ಮುಗ್ಧತೆಯಿಂದ ದೊಡ್ಡವರಾಗುವ ನೈಜ ಬದುಕಿನವರೆಗೆ, ಬದಲಾಗುವ ಕಾಲಗಳು, ಅನಿರೀಕ್ಷಿತ ಸವಾಲುಗಳು ಮತ್ತು ನೆನಪಾಗಿ ಉಳಿದ ಅನೇಕ ಪುಟ್ಟ ಕ್ಷಣಗಳ ಮೂಲಕ ನಾವು ಜೊತೆಯಾಗಿ ಪಯಣಿಸಿದ್ದೇವೆ. ಎಲ್ಲದರ ನಡುವೆ, ಪ್ರೀತಿ ಎಂದರೆ ಕೇವಲ ಜೊತೆಯಾಗಿರುವುದಲ್ಲ — ಒಬ್ಬರನ್ನೊಬ್ಬರು ಆಯ್ಕೆಮಾಡಿಕೊಳ್ಳುವುದು, ಜೊತೆಯಾಗಿ ಬೆಳೆಯುವುದು ಮತ್ತು ಪ್ರತಿದಿನವೂ ಎಂದೆಂದಿಗೂ ಜೊತೆಯಾಗಿರುವ ಭರವಸೆಯನ್ನು ಉಳಿಸಿಕೊಳ್ಳುವುದೆಂದು ಅರಿತುಕೊಂಡೆವು." class="font-cormorant text-charcoal/80 text-lg leading-relaxed">
           From the innocence of our school days to the realities of growing up, we have journeyed through changing seasons, unexpected challenges, and countless little moments that became our memories. Through it all, we learned that love is more than just staying together — it is choosing each other, growing together, and holding on to the promise of forever, one day at a time.
         </p>
       </div>
@@ -532,14 +552,14 @@
     <div class="story-card grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
       <div class="relative group overflow-hidden rounded-3xl card-luxury p-3">
         <div class="w-full h-80 rounded-2xl relative overflow-hidden">
-          <img src="images/chapter-three.jpeg" alt="The couple sharing a tender moment outdoors" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700" />
-          <span class="absolute bottom-4 right-4 font-cinzel text-xs text-royalGold-700 font-semibold tracking-widest">CHAPTER III</span>
+          <img src="images/chapter-three.jpeg" alt="The couple sharing a tender moment outdoors" data-kn-alt="ಹೊರಾಂಗಣದಲ್ಲಿ ಪ್ರೀತಿಯ ಕ್ಷಣವನ್ನು ಹಂಚಿಕೊಳ್ಳುತ್ತಿರುವ ಜೋಡಿ" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700" />
+          <span data-kn="ಅಧ್ಯಾಯ III" class="absolute bottom-4 right-4 font-cinzel text-xs text-royalGold-700 font-semibold tracking-widest">CHAPTER III</span>
         </div>
       </div>
       <div class="space-y-4 md:pl-6 text-left">
-        <span class="font-vibes text-3xl text-royalGold-600">The Vow</span>
-        <h3 class="font-playfair text-2xl sm:text-3xl text-charcoal">The Forever Begins</h3>
-        <p class="font-cormorant text-charcoal/80 text-lg leading-relaxed">
+        <span data-kn="ವಚನ" class="font-vibes text-3xl text-royalGold-600">The Vow</span>
+        <h3 data-kn="ಇಲ್ಲಿಂದ ಆರಂಭ ಅನಂತ ಪಯಣ" class="font-playfair text-2xl sm:text-3xl text-charcoal">The Forever Begins</h3>
+        <p data-kn="ಬಾಲ್ಯದ ಪ್ರೇಮಿಗಳಿಂದ ಜೀವನ ಸಂಗಾತಿಗಳಾಗುವವರೆಗೆ, ನಮ್ಮ ಪಯಣ ಈ ಸುಂದರ ಕ್ಷಣಕ್ಕೆ ನಮ್ಮನ್ನು ಕರೆತಂದಿದೆ. ವರ್ಷಗಳ ಬೆಳವಣಿಗೆ, ಕನಸುಗಳು ಮತ್ತು ಪರಸ್ಪರರನ್ನು ಆಯ್ಕೆಮಾಡಿಕೊಂಡ ನಂತರ, ನಮ್ಮ ಜೀವನದ ಹೊಸ ಅಧ್ಯಾಯ ಆರಂಭಿಸಲು ಸಿದ್ಧರಾಗಿದ್ದೇವೆ. ದೇವರ ಸನ್ನಿಧಿಯಲ್ಲಿ, ಕುಟುಂಬದವರು ಮತ್ತು ಆತ್ಮೀಯರ ಪ್ರೀತಿ-ಆಶೀರ್ವಾದಗಳ ನಡುವೆ ನಾವು ವಚನ ಸ್ವೀಕರಿಸುತ್ತೇವೆ — ಎರಡು ಹೃದಯಗಳು, ಒಂದೇ ಭರವಸೆ ಮತ್ತು ಜೀವಮಾನವಿಡೀ ಜೊತೆಯಾಗಿ ಸಾಗುವ ಪಯಣ." class="font-cormorant text-charcoal/80 text-lg leading-relaxed">
           From childhood sweethearts to soulmates for life, our journey has led us to this beautiful moment. After years of growing, dreaming, and choosing each other, we are ready to begin our forever. Before God, surrounded by the love and blessings of our families and dear ones, we take our vows — two hearts, one promise, and a lifetime of togetherness.
         </p>
       </div>
@@ -630,14 +650,22 @@
 
   <!-- 7. FOOTER -->
   <footer class="py-14 text-center border-t border-royalGold-300/60 text-charcoal/70 font-cinzel text-xs tracking-widest bg-ivory-50/70">
-    <div class="font-vibes text-4xl text-royalGold-700 mb-2">With Warmth & Gratitude</div>
-    <p class="text-royalGold-800 font-semibold mb-1">Vinay & Shrigandha</p>
-    <p class="text-[11px] text-charcoal/60">Peoples Trust, Sreeramanahalli • November 25 & 26, 2026</p>
+    <div data-kn="ಪ್ರೀತಿ ಮತ್ತು ಕೃತಜ್ಞತೆಯೊಂದಿಗೆ" class="font-vibes text-4xl text-royalGold-700 mb-2">With Warmth & Gratitude</div>
+    <p data-kn="ವಿನಯ್ ಮತ್ತು ಶ್ರೀಗಂಧ" class="text-royalGold-800 font-semibold mb-1">Vinay & Shrigandha</p>
+    <p data-kn="ಪೀಪಲ್ಸ್ ಟ್ರಸ್ಟ್, ಶ್ರೀರಾಮನಹಳ್ಳಿ • ನವೆಂಬರ್ 25 ಮತ್ತು 26, 2026" class="text-[11px] text-charcoal/60">Peoples Trust, Sreeramanahalli • November 25 & 26, 2026</p>
   </footer>
 
   <!-- SCRIPT LOGIC -->
   <script>
     const COUPLE_WHATSAPP_NUMBER = "919535812944";
+    let currentLanguage = "en";
+
+    const toastTranslations = {
+      "Directions link copied to clipboard!": "ಮಾರ್ಗದ ಲಿಂಕ್ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಲಾಗಿದೆ!",
+      "Music paused": "ಸಂಗೀತವನ್ನು ವಿರಮಿಸಲಾಗಿದೆ",
+      "Playing wedding music": "ವಿವಾಹದ ಸಂಗೀತವನ್ನು ಪ್ಲೇ ಮಾಡಲಾಗುತ್ತಿದೆ",
+      "Could not play music. Please try again.": "ಸಂಗೀತ ಪ್ಲೇ ಆಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+    };
 
     function scrollToSection(id) {
       const el = document.getElementById(id);
@@ -676,7 +704,9 @@
     function showToast(message) {
       const toast = document.getElementById('toast');
       const toastMsg = document.getElementById('toast-message');
-      toastMsg.innerText = message;
+      toastMsg.innerText = currentLanguage === 'kn'
+        ? (toastTranslations[message] || message)
+        : message;
       toast.classList.remove('translate-y-24', 'opacity-0');
       toast.classList.add('translate-y-0', 'opacity-100');
 
@@ -706,8 +736,6 @@
       start: "20261125T130000Z",
       end: "20261125T173000Z"
     };
-    document.getElementById('cal-reception').href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(calReception.title)}&dates=${calReception.start}/${calReception.end}&details=${encodeURIComponent(calReception.details)}&location=${encodeURIComponent(calReception.location)}`;
-
     const calMuhurtham = {
       title: "Wedding Muhurtham of Vinay LJ & Shrigandha Irani S",
       details: "Sacred Vedic ceremony, Mangalsutra Dharana, and Saat Phere followed by feast at Peoples Trust.",
@@ -715,7 +743,24 @@
       start: "20261126T024500Z",
       end: "20261126T083000Z"
     };
-    document.getElementById('cal-muhurtham').href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(calMuhurtham.title)}&dates=${calMuhurtham.start}/${calMuhurtham.end}&details=${encodeURIComponent(calMuhurtham.details)}&location=${encodeURIComponent(calMuhurtham.location)}`;
+
+    function updateCalendarLinks(language) {
+      const receptionTitle = language === 'kn'
+        ? 'ವಿನಯ್ ಎಲ್.ಜೆ. ಮತ್ತು ಶ್ರೀಗಂಧ ಇರಾನಿ ಎಸ್. ಅವರ ವಿವಾಹ ಆರತಕ್ಷತೆ'
+        : calReception.title;
+      const receptionDetails = language === 'kn'
+        ? 'ಪೀಪಲ್ಸ್ ಟ್ರಸ್ಟ್‌ನಲ್ಲಿ ಪ್ರೀತಿ, ಭೋಜನ, ಸಂಗೀತ ಮತ್ತು ಆಶೀರ್ವಾದಗಳಿಂದ ತುಂಬಿದ ಸಂಜೆ.'
+        : calReception.details;
+      const muhurthamTitle = language === 'kn'
+        ? 'ವಿನಯ್ ಎಲ್.ಜೆ. ಮತ್ತು ಶ್ರೀಗಂಧ ಇರಾನಿ ಎಸ್. ಅವರ ವಿವಾಹ ಮುಹೂರ್ತ'
+        : calMuhurtham.title;
+      const muhurthamDetails = language === 'kn'
+        ? 'ಪೀಪಲ್ಸ್ ಟ್ರಸ್ಟ್‌ನಲ್ಲಿ ವೇದ ವಿಧಿವಿಧಾನಗಳು, ಮಾಂಗಲ್ಯಧಾರಣೆ, ಸಪ್ತಪದಿ ಮತ್ತು ಭೋಜನ.'
+        : calMuhurtham.details;
+
+      document.getElementById('cal-reception').href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(receptionTitle)}&dates=${calReception.start}/${calReception.end}&details=${encodeURIComponent(receptionDetails)}&location=${encodeURIComponent(calReception.location)}`;
+      document.getElementById('cal-muhurtham').href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(muhurthamTitle)}&dates=${calMuhurtham.start}/${calMuhurtham.end}&details=${encodeURIComponent(muhurthamDetails)}&location=${encodeURIComponent(calMuhurtham.location)}`;
+    }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -861,6 +906,59 @@ Looking forward to celebrating at Peoples Trust, Sreeramanahalli!`;
 
     const audioBtn = document.getElementById('audio-toggle-btn');
     const audioIcon = document.getElementById('audio-icon');
+    const languageToggle = document.getElementById('language-toggle');
+
+    function setLanguage(language) {
+      currentLanguage = language;
+      document.documentElement.lang = language;
+      updateCalendarLinks(language);
+      document.title = language === 'kn'
+        ? 'ವಿನಯ್ ಮತ್ತು ಶ್ರೀಗಂಧ ಅವರ ವಿವಾಹ ಸಂಭ್ರಮ'
+        : 'The Royal Wedding Celebration — Vinay LJ & Shrigandha Irani S';
+
+      document.querySelectorAll('[data-kn]').forEach((element) => {
+        if (!element.dataset.en) {
+          element.dataset.en = element.textContent;
+        }
+        element.textContent = language === 'kn' ? element.dataset.kn : element.dataset.en;
+      });
+
+      document.querySelectorAll('[data-kn-alt]').forEach((element) => {
+        if (!element.dataset.enAlt) {
+          element.dataset.enAlt = element.getAttribute('alt');
+        }
+        element.setAttribute('alt', language === 'kn' ? element.dataset.knAlt : element.dataset.enAlt);
+      });
+
+      document.querySelectorAll('[data-kn-title]').forEach((element) => {
+        if (!element.dataset.enTitle) {
+          element.dataset.enTitle = element.title;
+        }
+        element.title = language === 'kn' ? element.dataset.knTitle : element.dataset.enTitle;
+      });
+
+      const switchToKannada = language === 'en';
+      languageToggle.textContent = switchToKannada ? 'ಕನ್ನಡ' : 'English';
+      languageToggle.lang = switchToKannada ? 'kn' : 'en';
+      languageToggle.setAttribute('aria-label', language === 'en' ? 'ಕನ್ನಡಕ್ಕೆ ಬದಲಿಸಿ' : 'Switch to English');
+      languageToggle.setAttribute('aria-pressed', String(language === 'kn'));
+      languageToggle.title = language === 'en' ? 'ಕನ್ನಡಕ್ಕೆ ಬದಲಿಸಿ' : 'Switch to English';
+
+      const audioAction = isAudioPlaying ? 'Pause' : 'Play';
+      const audioTitle = language === 'kn'
+        ? `${audioAction === 'Play' ? 'ವಿವಾಹದ ಸಂಗೀತವನ್ನು ಪ್ಲೇ ಮಾಡಿ' : 'ವಿವಾಹದ ಸಂಗೀತವನ್ನು ವಿರಮಿಸಿ'}`
+        : `${audioAction} Wedding Music`;
+      audioBtn.title = audioTitle;
+      audioBtn.setAttribute('aria-label', audioTitle);
+    }
+
+    languageToggle.addEventListener('click', () => {
+      const language = currentLanguage === 'en' ? 'kn' : 'en';
+      localStorage.setItem('wedding-invitation-language', language);
+      setLanguage(language);
+    });
+
+    setLanguage(localStorage.getItem('wedding-invitation-language') === 'kn' ? 'kn' : 'en');
 
     audioBtn.addEventListener('click', async () => {
       if (isAudioPlaying) {
@@ -868,8 +966,7 @@ Looking forward to celebrating at Peoples Trust, Sreeramanahalli!`;
         isAudioPlaying = false;
         audioIcon.classList.remove('fa-volume-up');
         audioIcon.classList.add('fa-volume-mute');
-        audioBtn.title = 'Play Wedding Music';
-        audioBtn.setAttribute('aria-label', 'Play Wedding Music');
+        setLanguage(currentLanguage);
         showToast("Music paused");
         return;
       }
@@ -879,8 +976,7 @@ Looking forward to celebrating at Peoples Trust, Sreeramanahalli!`;
         isAudioPlaying = true;
         audioIcon.classList.remove('fa-volume-mute');
         audioIcon.classList.add('fa-volume-up');
-        audioBtn.title = 'Pause Wedding Music';
-        audioBtn.setAttribute('aria-label', 'Pause Wedding Music');
+        setLanguage(currentLanguage);
         showToast("Playing wedding music");
       } catch (error) {
         console.error("Unable to play wedding music", error);
